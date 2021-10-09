@@ -3,12 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		55D2523DB7B0E033E3A8F6ED /* Pods_SignUpKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F296D4B4101F037AD729959 /* Pods_SignUpKit.framework */; };
 		93E9FEAE0F7023A73DC6D2B0 /* Pods_SignUpKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 730F018DD377A2F060F23322 /* Pods_SignUpKitTests.framework */; };
+		F447B22C27113FA50054E777 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = F447B22B27113FA50054E777 /* Realm */; };
+		F447B22E27113FA50054E777 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F447B22D27113FA50054E777 /* RealmSwift */; };
 		F4FE9371270F67B300B98FFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FE9370270F67B300B98FFC /* AppDelegate.swift */; };
 		F4FE9373270F67B300B98FFC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FE9372270F67B300B98FFC /* SceneDelegate.swift */; };
 		F4FE9375270F67B300B98FFC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FE9374270F67B300B98FFC /* ViewController.swift */; };
@@ -70,6 +72,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F447B22E27113FA50054E777 /* RealmSwift in Frameworks */,
+				F447B22C27113FA50054E777 /* Realm in Frameworks */,
 				55D2523DB7B0E033E3A8F6ED /* Pods_SignUpKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -103,7 +107,6 @@
 				30F11DAF9BF48C024C362400 /* Pods-SignUpKitTests.debug.xcconfig */,
 				7E94EB01085A6A862292AF07 /* Pods-SignUpKitTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -191,6 +194,10 @@
 			dependencies = (
 			);
 			name = SignUpKit;
+			packageProductDependencies = (
+				F447B22B27113FA50054E777 /* Realm */,
+				F447B22D27113FA50054E777 /* RealmSwift */,
+			);
 			productName = SignUpKit;
 			productReference = F4FE936D270F67B300B98FFC /* SignUpKit.app */;
 			productType = "com.apple.product-type.application";
@@ -266,6 +273,9 @@
 				Base,
 			);
 			mainGroup = F4FE9364270F67B300B98FFC;
+			packageReferences = (
+				F447B22A27113FA50054E777 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+			);
 			productRefGroup = F4FE936E270F67B300B98FFC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -788,6 +798,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F447B22A27113FA50054E777 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.17.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F447B22B27113FA50054E777 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F447B22A27113FA50054E777 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		F447B22D27113FA50054E777 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F447B22A27113FA50054E777 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		F4FE9379270F67B300B98FFC /* SignUpKit.xcdatamodeld */ = {
